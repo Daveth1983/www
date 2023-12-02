@@ -9,11 +9,11 @@ def establish_connection(connection_data=None):
         connection_data = get_connection_data()
         # print(connection_data)
     try:
-        connect_str = "dbname={} user={} host={} password={}".format(connection_data['dbname'],
-                                                                     connection_data['user'],
-                                                                     connection_data['host'],
-                                                                     connection_data['password'])
-        # connect_str = "dbname={} user={} host={} password={}".format('dm67605_test', 'postgres', '127.0.0.1', 'postgres')
+        # connect_str = "dbname={} user={} host={} password={}".format(connection_data['dbname'],
+        #                                                              connection_data['user'],
+        #                                                              connection_data['host'],
+        #                                                              connection_data['password'])
+        connect_str = "dbname={} user={} host={} password={}".format('test_nae5', 'postgres1', 'postgres://postgres1:3LMINopqPL8y0XALTDnRO2JvvKBbIXQV@dpg-cllm3rsjtl8s73adabig-a/test_nae5', '3LMINopqPL8y0XALTDnRO2JvvKBbIXQV')
         conn = psycopg2.connect(connect_str)
         conn.autocommit = True
     except psycopg2.DatabaseError as e:
