@@ -26,33 +26,23 @@
     <script>
 
       const button = document.querySelector('button');
-      // Add a mouseover event listener
-      button.addEventListener('mouseover', () => {
-        
-        // Change the button's background color
-        button.style.backgroundImage = 'url("../static/css/tommam.jpg")'
-        console.log('on')
+     
+      button.addEventListener('mouseover', () => {  
+      button.style.backgroundImage = 'url("../static/css/tommam.jpg")'
+      console.log('on')
       });
       
-      // Add a mouseout event listener
+    
       button.addEventListener('mouseout', () => {
-        // Change the button's background color back to its original color
        button.style.backgroundImage = 'url("../static/css/tom.jpg")';
        console.log('off')
       });
       button.addEventListener('click', () => {
-        // Change the button's background color back to its original color
-       button.style.backgroundImage = 'url("../static/css/TOMKUR.jpg")';
-       console.log('off')
+      button.style.backgroundImage = 'url("../static/css/TOMKUR.jpg")';
+      console.log('off')
       });
 
-
-
-      
       </script>
-    
-    
-
 
 </body>
 </html>
