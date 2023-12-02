@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.button{
+    background: url('tom.jpg');
+    width: 200px;
+    height:200px;
+    /* object-fit:contain; */
+    background-position:center;
+background-repeat:no-repeat;
+background-size: contain; 
+position: absolute;
+left: 45vw;
+top: 25vh;
+transition: all 5000ms ease-in-out;
+}
+.button:active{
+    background: url('tomkur.jpg');
+   transform: scale(3) rotate(720deg);
+  
+
+    /* object-fit:contain; */
+    background-position:center;
+background-repeat:no-repeat;
+background-size: contain; 
+transition: all 100ms ease-in-out;
+filter: invert();
+}
+
+body{
+    background-color: gray;
+  
+}
+
+form{
+ 
+   
+width: 100vw;
+position: relative;
+}
+
+
+input{
+    width: 100px;
+  left: 50vw;
+  position: absolute;
+  border: none;
+  top: 40px
+  
+}
