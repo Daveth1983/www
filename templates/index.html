@@ -29,17 +29,21 @@
      
       button.addEventListener('mouseover', () => {  
       button.style.backgroundImage = 'url("../static/css/tommam.jpg")'
-      console.log('on')
+     
       });
       
     
       button.addEventListener('mouseout', () => {
        button.style.backgroundImage = 'url("../static/css/tom.jpg")';
-       console.log('off')
+       
       });
       button.addEventListener('click', () => {
       button.style.backgroundImage = 'url("../static/css/TOMKUR.jpg")';
-      console.log('off')
+     
+      });
+      button.addEventListener('touchstart', () => {
+      button.style.backgroundImage = 'url("../static/css/tommam.jpg")';
+      
       });
 
       </script>
