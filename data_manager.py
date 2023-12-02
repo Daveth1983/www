@@ -24,14 +24,14 @@ def establish_connection(connection_data=None):
 
 
 def get_connection_data():
-  
-    return {
-        'dbname': os.environ.get('MY__PSQL_DBNAME'),
-        'user': os.environ.get('MY__PSQL_USER'),
-        'host': os.environ.get('MY__PSQL_HOST'),
-        'password': os.environ.get('MY__PSQL_PASSWORD')
+    pass
+    # return {
+    #     'dbname': os.environ.get('MY__PSQL_DBNAME'),
+    #     'user': os.environ.get('MY__PSQL_USER'),
+    #     'host': os.environ.get('MY__PSQL_HOST'),
+    #     'password': os.environ.get('MY__PSQL_PASSWORD')
         
-    }
+    # }
 
 
 def execute_select(statement, variables=None, fetchall=True):
