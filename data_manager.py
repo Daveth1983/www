@@ -26,10 +26,17 @@ def establish_connection(connection_data=None):
 def get_connection_data():
 
     return {
-        'dbname': os.environ.get('MY__PSQL_DBNAME'),
-        'user': os.environ.get('MY__PSQL_USER'),
-        'host': os.environ.get('MY__PSQL_HOST'),
-        'password': os.environ.get('MY__PSQL_PASSWORD')
+        # 'dbname': os.environ.get('MY__PSQL_DBNAME'),
+        # 'user': os.environ.get('MY__PSQL_USER'),
+        # 'host': os.environ.get('MY__PSQL_HOST'),
+        # 'password': os.environ.get('MY__PSQL_PASSWORD')
+        
+        'dbname': 'test_nae5',
+        'user':  'postgres1',
+        'host': 'dpg-cllm3rsjtl8s73adabig-a.oregon-postgres.render.com',
+        'password':'3LMINopqPL8y0XALTDnRO2JvvKBbIXQV'
+        
+        
         
     }
 
