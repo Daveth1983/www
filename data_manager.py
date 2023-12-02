@@ -13,7 +13,7 @@ def establish_connection(connection_data=None):
         #                                                              connection_data['user'],
         #                                                              connection_data['host'],
         #                                                              connection_data['password'])
-        connect_str = "dbname={} user={} host={} password={}".format('test_nae5', 'postgres1', 'postgres://postgres1:3LMINopqPL8y0XALTDnRO2JvvKBbIXQV@dpg-cllm3rsjtl8s73adabig-a/test_nae5', '3LMINopqPL8y0XALTDnRO2JvvKBbIXQV')
+        connect_str = "dbname={} user={} host={} password={}".format('test_nae5', 'postgres1', 'dpg-cllm3rsjtl8s73adabig-a', '3LMINopqPL8y0XALTDnRO2JvvKBbIXQV')
         conn = psycopg2.connect(connect_str)
         conn.autocommit = True
     except psycopg2.DatabaseError as e:
