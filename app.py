@@ -11,15 +11,24 @@ load_dotenv()
 
 @app.route("/", methods=['POST', 'GET'] )
 def index():
-    return render_template('index.html')
+    if request.method == "GET":
+        first_name = queries.test()  
+        # print(first_name)
+    return render_template('index.html' , first_name = first_name[0][0]) 
 
 
-@app.route("/add", methods=['POST'])
+
+
+
+@app.route("/add", methods=['POST', 'GET'])
 def add():
+   
     if request.method == "POST":
+            # first_name = first_name + 1
         first_name = request.form
+      
         queries.update_DB(first_name['status'], '1')
-    return redirect('/')
+        return redirect('/')
 
 # @app.route("/api/<id>&<costam>", methods=['PUT', 'POST'])
 # def wczytaj(id, costam):

@@ -9,21 +9,24 @@ height: 300px;
 background-position: center center;
 background-repeat: no-repeat;
 background-size: 100% 100%;
+background-image: url("tom.jpg");
+-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+
 }
 
-
+.ilosc{
+    font-size: 400px;
+ 
+}
 
 body{
     background-color: gray;
   
 }
 
-form{
- 
-   
-width: 100vw;
-position: relative;
-}
+
 
 
 input{
@@ -31,6 +34,16 @@ input{
   left: 50vw;
   position: absolute;
   border: none;
-  top: 40px
+  top: 40px;
+  display: none;
   
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
 }
