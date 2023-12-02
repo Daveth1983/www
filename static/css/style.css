@@ -3,7 +3,7 @@
     padding: 0;
 }
 .button{
-    /* background: url('tom.jpg'); */
+    background: url('tom.jpg');
     width: 200px;
     height:200px;
     /* object-fit:contain; */
@@ -16,7 +16,7 @@ top: 25vh;
 
 }
 .button:active{
-    /* background: url('tomkur.jpg'); */
+    background: url('tomkur.jpg');
    transform: scale(2);
   
 
