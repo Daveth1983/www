@@ -9,11 +9,11 @@ def establish_connection(connection_data=None):
         connection_data = get_connection_data()
         # print(connection_data)
     try:
-        # connect_str = "dbname={} user={} host={} password={}".format(connection_data['dbname'],
-        #                                                              connection_data['user'],
-        #                                                              connection_data['host'],
-        #                                                              connection_data['password'])
-        connect_str = "dbname={} user={} host={} password={}".format('test_nae5', 'postgres1', 'dpg-cllm3rsjtl8s73adabig-a', '3LMINopqPL8y0XALTDnRO2JvvKBbIXQV')
+        connect_str = "dbname={} user={} host={} password={}".format(connection_data['dbname'],
+                                                                     connection_data['user'],
+                                                                     connection_data['host'],
+                                                                     connection_data['password'])
+        # connect_str = "dbname={} user={} host={} password={}".format('test_nae5', 'postgres1', 'dpg-cllm3rsjtl8s73adabig-a', '3LMINopqPL8y0XALTDnRO2JvvKBbIXQV')
         conn = psycopg2.connect(connect_str)
         conn.autocommit = True
     except psycopg2.DatabaseError as e:
@@ -24,14 +24,14 @@ def establish_connection(connection_data=None):
 
 
 def get_connection_data():
-    pass
-    # return {
-    #     'dbname': os.environ.get('MY__PSQL_DBNAME'),
-    #     'user': os.environ.get('MY__PSQL_USER'),
-    #     'host': os.environ.get('MY__PSQL_HOST'),
-    #     'password': os.environ.get('MY__PSQL_PASSWORD')
+
+    return {
+        'dbname': os.environ.get('MY__PSQL_DBNAME'),
+        'user': os.environ.get('MY__PSQL_USER'),
+        'host': os.environ.get('MY__PSQL_HOST'),
+        'password': os.environ.get('MY__PSQL_PASSWORD')
         
-    # }
+    }
 
 
 def execute_select(statement, variables=None, fetchall=True):
