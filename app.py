@@ -41,7 +41,7 @@ def add():
 #     return render_template('index3.html', id=dodo)
 
 def main():
-    app.run(debug=True)
+    app.run(debug=False)
     load_dotenv('.env')
  
 
