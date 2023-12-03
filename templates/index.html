@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="refresh" content="5" URL="http://127.0.0.1:5000/">
   <title>Document</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -17,7 +18,7 @@
      
      <input type="text" name="status" STYLE="background-color: RED;" value="{{first_name | int +1 }}" ><br>
   
-     <button  type="submit"></button>
+     <button id="myButton" type="submit" onclick=""></button>
      
     </form>
     
@@ -29,16 +30,20 @@
      
       button.addEventListener('mouseover', () => {  
       button.style.backgroundImage = 'url("../static/css/tommam.jpg")'
-     
-      });
-      
+
+    });
     
-      button.addEventListener('mouseout', () => {
-       button.style.backgroundImage = 'url("../static/css/tom.jpg")';
-       
-      });
-      button.addEventListener('click', () => {
+    
+    button.addEventListener('mouseout', () => {
+      button.style.backgroundImage = 'url("../static/css/tom.jpg")';
+      
+    });
+    button.addEventListener('click', () => {
       button.style.backgroundImage = 'url("../static/css/TOMKUR.jpg")';
+      setTimeout(function(){
+   window.location.reload(1);
+}, 5000);
+     
      
       });
       button.addEventListener('touchstart', () => {

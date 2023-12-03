@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 # from util import json_response
 # import mimetypes
 import queries
+import threading
 
 # mimetypes.add_type('application/javascript', '.js')
 app = Flask(__name__)
@@ -11,6 +12,7 @@ load_dotenv()
 
 @app.route("/", methods=['POST', 'GET'] )
 def index():
+
     if request.method == "GET":
         first_name = queries.test()  
         # print(first_name)
@@ -26,7 +28,7 @@ def add():
     if request.method == "POST":
             # first_name = first_name + 1
         first_name = request.form
-      
+        
         queries.update_DB(first_name['status'], '1')
         return redirect('/')
 
