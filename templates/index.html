@@ -30,17 +30,18 @@
      
       button.addEventListener('mouseover', () => {  
         button.style.backgroundImage = 'url("../static/css/2.jpg")'
+      })
         
-        function feczowanie(){
-        fetch("/update")
-        .then(res => res.json())
-        .then(data=>{
-        
-          console.log(data);
-          let ilosc = document.querySelector(".ilosc").innerHTML = data.name;
-          let doda = document.querySelector('#dsa').value = parseInt(data.name) +1;
-        
-        })};
+  function feczowanie(){
+  fetch("/update")
+  .then(res => res.json())
+  .then(data=>{
+  
+    console.log(data);
+    let ilosc = document.querySelector(".ilosc").innerHTML = data.name;
+    let doda = document.querySelector('#dsa').value = parseInt(data.name) +1;
+  
+  })};
 
       
     //   setInterval(function () {
