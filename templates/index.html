@@ -13,7 +13,7 @@
   <div class="ilosc">
     {{first_name}}
   </div> 
-<br>
+  <br>
    <form id="myForm" action="{{ url_for('add')}}" method="POST">
      
      <input id="dsa" type="text" name="status" STYLE="background-color: RED;" value="{{first_name | int +1 }}" ><br>
@@ -29,8 +29,18 @@
       const button = document.querySelector('button');
      
       button.addEventListener('mouseover', () => {  
-      button.style.backgroundImage = 'url("../static/css/2.jpg")'
-  
+        button.style.backgroundImage = 'url("../static/css/2.jpg")'
+        
+        function feczowanie(){
+        fetch("/update")
+        .then(res => res.json())
+        .then(data=>{
+        
+          console.log(data);
+          let ilosc = document.querySelector(".ilosc").innerHTML = data.name;
+          let doda = document.querySelector('#dsa').value = parseInt(data.name) +1;
+        
+        })};
 
       
     //   setInterval(function () {
@@ -61,16 +71,6 @@
       });
 
 
-      function feczowanie(){
-      fetch("/update")
-      .then(res => res.json())
-      .then(data=>{
-      
-        console.log(data);
-        let ilosc = document.querySelector(".ilosc").innerHTML = data.name;
-        let doda = document.querySelector('#dsa').value = parseInt(data.name) +1;
-      
-      })};
       </script>
 
 </body>
