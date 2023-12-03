@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 # from util import json_response
 # import mimetypes
 import queries
-import threading
+
+from threading import Timer
 
 # mimetypes.add_type('application/javascript', '.js')
 app = Flask(__name__)
@@ -12,11 +13,14 @@ load_dotenv()
 
 @app.route("/", methods=['POST', 'GET'] )
 def index():
-
+    
     if request.method == "GET":
         first_name = queries.test()  
         # print(first_name)
     return render_template('index.html' , first_name = first_name[0][0]) 
+
+
+
 
 
 
@@ -43,6 +47,39 @@ def add():
 
 
 
+# @app.route('/update')    
+# def update():
+#     import time
+#     while True:
+#         first_name =  jsonify(first_name = queries.test())
+      
+#         print(first_name)
+#         time.sleep(5)
+   
+
+
+
+# @app.route('/update', methods=['POST'])
+# def add_income():
+#     incomes.append(request.get_json())
+#     return '', 204
+
+
+
+import json
+
+@app.route('/update')
+def update(): # Data to be written
+    first_name = queries.test()  
+    dictionary = {
+        "name": first_name[0][0]
+       
+    }
+    
+    # Serializing json
+    json_object = json.dumps(dictionary, indent=4)
+    return json_object
+
 
 
 # @app.route("/api/<id>", methods=['GET'])
@@ -51,13 +88,16 @@ def add():
 #     dodo = queries.getbyid(id)
 #     return render_template('index3.html', id=dodo)
 
+
+
 def main():
     app.run(debug=True)
     load_dotenv('.env')
- 
+    update()    
+   
 
-    # with app.app_context():
-    #     app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon/favicon.ico'))
+    with app.app_context():
+        app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon/favicon.ico'))
 
 
 if __name__ == '__main__':

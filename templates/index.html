@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="refresh" content="5" />
+ <!-- <meta http-equiv="refresh" content="5" /> -->
   <title>Document</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -16,35 +16,40 @@
 <br>
    <form id="myForm" action="{{ url_for('add')}}" method="POST">
      
-     <input type="text" name="status" STYLE="background-color: RED;" value="{{first_name | int +1 }}" ><br>
+     <input id="dsa" type="text" name="status" STYLE="background-color: RED;" value="{{first_name | int +1 }}" ><br>
   
      <button id="myButton" type="submit" onclick=""></button>
      
     </form>
     
   </div>
-   
+   <div id="number">0</div>
     <script>
 
       const button = document.querySelector('button');
      
       button.addEventListener('mouseover', () => {  
       button.style.backgroundImage = 'url("../static/css/2.jpg")'
+  
 
-    });
+      
+    //   setInterval(function () {
+    //     feczowanie()
+    // }, 5000);
     
     
     button.addEventListener('mouseout', () => {
       button.style.backgroundImage = 'url("../static/css/1.jpg")';
+
       
     });
-    button.addEventListener('click', () => {
-      button.style.backgroundImage = 'url("../static/css/3.jpg")';
-      setTimeout(function(){
-   window.location.reload(1);
-}, 5000);
-     
-     
+
+    button.addEventListener('mousemove', () => {
+      button.style.backgroundImage = 'url("../static/css/1.jpg")';
+      feczowanie()
+      
+    });
+
       });
       button.addEventListener('touchstart', () => {
       button.style.backgroundImage = 'url("../static/css/2.jpg")';
@@ -54,11 +59,18 @@
       button.style.backgroundImage = 'url("../static/css/1.jpg")';
       
       });
-      button.addEventListener('submit', () => {
-      button.style.backgroundImage = 'url("../static/css/3.jpg")';
-      
-      });
 
+
+      function feczowanie(){
+      fetch("http://127.0.0.1:5000/update")
+      .then(res => res.json())
+      .then(data=>{
+      
+        console.log(data);
+        let ilosc = document.querySelector(".ilosc").innerHTML = data.name;
+        let doda = document.querySelector('#dsa').value = parseInt(data.name) +1;
+      
+      })};
       </script>
 
 </body>
