@@ -6,18 +6,18 @@ button{
    
 width: 300px;
 height: 300px;
-background-position: center center;
+/* background-position: center center;
 background-repeat: no-repeat;
 background-size: 100% 100%;
 background-image: url("1.jpg");
 -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-background-color: transparent;
+background-color: transparent; */
 }
 
-.ilosc{
-    font-size: 300px;
+.QuantityTomSware{
+    font-size: 150px;
  
 }
 
@@ -35,7 +35,7 @@ input{
   position: absolute;
   border: none;
   top: 40px;
-  display: none;
+  /* display: none; */
   
 }
 
